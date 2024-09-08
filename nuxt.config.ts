@@ -1,5 +1,6 @@
 export default defineNuxtConfig({
-  modules: ["@nuxtjs/tailwindcss"],
+  modules: ['@nuxtjs/tailwindcss'],
+
   nitro: {
     experimental: {
       websocket: true,
@@ -7,13 +8,16 @@ export default defineNuxtConfig({
       database: true,
     },
   },
+
   $production: {
     nitro: {
       database: {
         default: {
-          connector: 'bun'
-        }
-      }
-    }
-  }
-})
+          connector: 'sqlite',
+        },
+      },
+    },
+  },
+
+  compatibilityDate: '2024-09-08',
+});
